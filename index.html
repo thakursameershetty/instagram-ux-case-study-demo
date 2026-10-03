@@ -43,7 +43,7 @@
     main {
       display: flex;
       gap: 96px;
-      padding: 64px 24px;
+      padding: 40px 24px 64px;
       flex-wrap: wrap;
       justify-content: center;
     }
@@ -370,6 +370,28 @@
       transform: scale(0.95);
     }
 
+    /* ---------- Intro note ---------- */
+    .intro {
+      max-width: 560px;
+      margin: 56px 24px 0;
+      text-align: center;
+    }
+
+    .intro h2 {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #8a8a8a;
+      margin-bottom: 8px;
+    }
+
+    .intro p {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #e6e6e6;
+    }
+
     /* ---------- Figma link ---------- */
     .fab-group {
       position: fixed;
@@ -641,6 +663,12 @@
 
 <body>
   <h1>Instagram Reels — The Accidental Refresh</h1>
+
+  <header class="intro">
+    <h2>Why Reels?</h2>
+    <p>Short-form feeds are where Gen Z catches up on news and entertainment, so it is where a news app has to compete.
+      A slip that wipes out a reel can happen in any vertical feed, so the fix carries over.</p>
+  </header>
 
   <main>
     <!-- Problem -->
