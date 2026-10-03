@@ -874,7 +874,16 @@
       const video = document.getElementById('problem-video');
       const playBtn = document.getElementById('problem-play');
 
+      // Only one demo plays at a time: starting this one sends the other back to its start
+      window.resetProblem = () => {
+        video.pause();
+        video.currentTime = 0;
+        playBtn.classList.remove('hidden');
+        problemCallout.reset();
+      };
+
       playBtn.addEventListener('click', () => {
+        window.resetSolution?.();
         if (video.ended) video.currentTime = 0;
         video.play();
         playBtn.classList.add('hidden');
@@ -933,6 +942,7 @@
       let tapTimers = [];
 
       function start() {
+        window.resetProblem?.();
         phase = 'original';
         video.currentTime = 0;
         video.play();
@@ -1029,6 +1039,8 @@
         solutionCallout.reset();
         playBtn.classList.remove('hidden');
       }
+
+      window.resetSolution = backToNormal;
 
       let resetTimer = null;
       function scheduleReset() {
