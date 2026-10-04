@@ -636,7 +636,7 @@
       pointer-events: none;
     }
 
-    #arrows > path {
+    #arrows>path {
       fill: none;
       stroke-width: 4;
       stroke-linecap: round;
@@ -644,7 +644,7 @@
       transition: opacity 250ms ease;
     }
 
-    #arrows > path.on {
+    #arrows>path.on {
       opacity: 1;
     }
 
@@ -659,6 +659,10 @@
       }
     }
   </style>
+  <script>
+    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+  </script>
+  <script defer src="/_vercel/insights/script.js"></script>
 </head>
 
 <body>
@@ -674,24 +678,26 @@
     <!-- Problem -->
     <section class="demo problem-demo" aria-labelledby="problem-title">
       <div class="stage-wrap">
-      <div class="stage" id="problem-stage">
-        <div class="ring" id="problem-ring"></div>
-        <div class="screen" id="problem-screen">
-          <video id="problem-video" src="Screen_Recording_20261003_220127_Instagram.mp4" playsinline preload="auto"
-            muted></video>
-          <button class="play-overlay" id="problem-play" type="button" aria-label="Play problem demo">
-            <span class="play-btn"><span class="material-symbols-rounded">play_arrow</span></span>
-          </button>
+        <div class="stage" id="problem-stage">
+          <div class="ring" id="problem-ring"></div>
+          <div class="screen" id="problem-screen">
+            <video id="problem-video" src="Screen_Recording_20261003_220127_Instagram.mp4" playsinline preload="auto"
+              muted></video>
+            <button class="play-overlay" id="problem-play" type="button" aria-label="Play problem demo">
+              <span class="play-btn"><span class="material-symbols-rounded">play_arrow</span></span>
+            </button>
+          </div>
         </div>
-      </div>
-      <div class="callout" id="problem-callout" aria-live="polite">
-          <div class="callout-head"><span id="problem-tag"></span><span class="callout-time" id="problem-time">00:00</span></div>
+        <div class="callout" id="problem-callout" aria-live="polite">
+          <div class="callout-head"><span id="problem-tag"></span><span class="callout-time"
+              id="problem-time">00:00</span></div>
           <div class="callout-text" id="problem-text"></div>
-      </div>
+        </div>
       </div>
       <div class="caption">
         <h2 id="problem-title">Problem</h2>
-        <p>Pulling down to reach the top can trigger a refresh. The current feed is replaced, and there is no way back.</p>
+        <p>Pulling down to reach the top can trigger a refresh. The current feed is replaced, and there is no way back.
+        </p>
         <p>People lose the reel they were watching, or one they meant to share.</p>
       </div>
     </section>
@@ -699,36 +705,37 @@
     <!-- Solution -->
     <section class="demo solution-demo" aria-labelledby="solution-title">
       <div class="stage-wrap">
-      <div class="stage" id="solution-stage">
-      <div class="ring" id="solution-ring"></div>
-      <div class="screen" id="solution-screen">
-        <video id="solution-video" src="Screen_Recording_20261003_220127_Instagram.mp4" playsinline preload="auto"
-          muted></video>
-        <div class="fader" id="fader"></div>
+        <div class="stage" id="solution-stage">
+          <div class="ring" id="solution-ring"></div>
+          <div class="screen" id="solution-screen">
+            <video id="solution-video" src="Screen_Recording_20261003_220127_Instagram.mp4" playsinline preload="auto"
+              muted></video>
+            <div class="fader" id="fader"></div>
 
-        <div class="snackbar" id="snackbar" role="status" aria-live="polite">
-          <button class="close" id="snackbar-dismiss-btn" type="button" aria-label="Dismiss">
-            <svg viewBox="0 0 24 24">
-              <path d="M6 6l12 12M18 6L6 18" />
-            </svg>
-          </button>
-          <div class="msg">Refreshed by accident?<br />Go back to your previous feed within <span
-              id="secs">5</span> seconds</div>
-          <button class="btn" id="previous-feed-btn" type="button">Previous Feed</button>
-          <div class="bar"><i id="bar"></i></div>
+            <div class="snackbar" id="snackbar" role="status" aria-live="polite">
+              <button class="close" id="snackbar-dismiss-btn" type="button" aria-label="Dismiss">
+                <svg viewBox="0 0 24 24">
+                  <path d="M6 6l12 12M18 6L6 18" />
+                </svg>
+              </button>
+              <div class="msg">Refreshed by accident?<br />Go back to your previous feed within <span id="secs">5</span>
+                seconds</div>
+              <button class="btn" id="previous-feed-btn" type="button">Previous Feed</button>
+              <div class="bar"><i id="bar"></i></div>
+            </div>
+
+            <div class="tap" id="tap" aria-hidden="true"></div>
+
+            <button class="play-overlay" id="solution-play" type="button" aria-label="Play solution demo">
+              <span class="play-btn"><span class="material-symbols-rounded">play_arrow</span></span>
+            </button>
+          </div>
         </div>
-
-        <div class="tap" id="tap" aria-hidden="true"></div>
-
-        <button class="play-overlay" id="solution-play" type="button" aria-label="Play solution demo">
-          <span class="play-btn"><span class="material-symbols-rounded">play_arrow</span></span>
-        </button>
-      </div>
-      </div>
-      <div class="callout" id="solution-callout" aria-live="polite">
-        <div class="callout-head"><span id="solution-tag"></span><span class="callout-time" id="solution-time">00:00</span></div>
-        <div class="callout-text" id="solution-text"></div>
-      </div>
+        <div class="callout" id="solution-callout" aria-live="polite">
+          <div class="callout-head"><span id="solution-tag"></span><span class="callout-time"
+              id="solution-time">00:00</span></div>
+          <div class="callout-text" id="solution-text"></div>
+        </div>
       </div>
       <div class="caption">
         <h2 id="solution-title">Solution <button class="replay" id="replay-btn" type="button"><span
@@ -740,11 +747,15 @@
 
     <svg id="arrows" aria-hidden="true">
       <defs>
-        <marker id="head-red" viewBox="0 0 10 10" refX="8" refY="5" markerUnits="userSpaceOnUse" markerWidth="24" markerHeight="24" orient="auto-start-reverse">
-          <path d="M1 1L9 5L1 9" fill="none" stroke="#ff4d5a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        <marker id="head-red" viewBox="0 0 10 10" refX="8" refY="5" markerUnits="userSpaceOnUse" markerWidth="24"
+          markerHeight="24" orient="auto-start-reverse">
+          <path d="M1 1L9 5L1 9" fill="none" stroke="#ff4d5a" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" />
         </marker>
-        <marker id="head-green" viewBox="0 0 10 10" refX="8" refY="5" markerUnits="userSpaceOnUse" markerWidth="24" markerHeight="24" orient="auto-start-reverse">
-          <path d="M1 1L9 5L1 9" fill="none" stroke="#3ddc84" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        <marker id="head-green" viewBox="0 0 10 10" refX="8" refY="5" markerUnits="userSpaceOnUse" markerWidth="24"
+          markerHeight="24" orient="auto-start-reverse">
+          <path d="M1 1L9 5L1 9" fill="none" stroke="#3ddc84" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" />
         </marker>
       </defs>
       <path id="problem-arrow" stroke="#ff4d5a" marker-end="url(#head-red)" />
@@ -766,7 +777,8 @@
         I design and build products around the small moments that feel right.
       </div>
     </div>
-    <a class="figma-link" href="https://www.figma.com/design/kFwcaiE2XzCCSJ3CgFCs24/Instagram-UX-case-study?node-id=0-1&amp;t=RqvbY5f39jk2Rpss-1"
+    <a class="figma-link"
+      href="https://www.figma.com/design/kFwcaiE2XzCCSJ3CgFCs24/Instagram-UX-case-study?node-id=0-1&amp;t=RqvbY5f39jk2Rpss-1"
       target="_blank" rel="noopener noreferrer">
       <svg viewBox="0 0 38 57" aria-hidden="true">
         <path fill="#1ABCFE" d="M19 28.5a9.5 9.5 0 1 1 19 0 9.5 9.5 0 0 1-19 0z" />
@@ -786,7 +798,7 @@
 
     // Control points (start → tip) of the looping arrow, drawn in a ~125x125 box
     const SQUIGGLE = [[42, 150], [58, 135], [80, 118], [108, 104], [140, 90], [142, 148], [100, 150],
-      [58, 152], [40, 110], [74, 88], [100, 68], [135, 45], [165, 28]];
+    [58, 152], [40, 110], [74, 88], [100, 68], [135, 45], [165, 28]];
 
     function makeCallout(prefix, side) {
       const callout = document.getElementById(`${prefix}-callout`);
